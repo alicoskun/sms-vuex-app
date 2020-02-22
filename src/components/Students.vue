@@ -15,8 +15,8 @@
           ></v-progress-circular>
         </v-container>
 
-      <v-list v-if="!$store.getters.isLoaded">
-        <v-list-tile v-for="(student, index) in $store.getters.students" :to="'editStudent/' + index">
+      <v-list v-if="$store.getters.isLoaded">
+        <v-list-tile v-for="(student, index) in $store.getters.students" v-bind:key="index" :to="'editStudent/' + index">
           <v-list-tile-content>
             <v-list-tile-title v-text="student.fullName"></v-list-tile-title>
           </v-list-tile-content>
